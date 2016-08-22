@@ -1,0 +1,6 @@
+
+class inheritancetest():
+   
+    print "Inheritance"
+
+
