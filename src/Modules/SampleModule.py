@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class FacebookModule(object):
 
-    driver = webdriver
+    driver = webdriver.Firefox()
 
     def _init_(self,driver=webdriver):
         print('This is Sample Module Class')

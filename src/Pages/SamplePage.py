@@ -1,5 +1,4 @@
-from selenium import webdriver
-from src.Scripts.SampleModule import FacebookModule
+from src.Modules.SampleModule import FacebookModule
 
 FBModule = FacebookModule()
 class FacebookPage(object):
