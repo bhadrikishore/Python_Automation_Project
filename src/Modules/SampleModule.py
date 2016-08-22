@@ -1,11 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from src.Scripts.BaseSpec import BaseClass
 
-class FacebookModule(object):
+base = BaseClass()
+class FacebookModule(BaseClass):
 
-    driver = webdriver.Firefox()
+    driver = base.browserLaunch()
 
-    def _init_(self,driver=webdriver):
+    def _init_(self):
         print('This is Sample Module Class')
 
     def getUsernameField(self):
