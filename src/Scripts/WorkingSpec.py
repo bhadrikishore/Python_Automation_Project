@@ -4,14 +4,14 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 from src.Pages.SamplePage import FacebookPage
-from src.Pyhton_Basics import InheritanceSpec
+from src.Pyhton_Basics import Basics
 
 FBPage = FacebookPage()
 class BaseSpec(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        inh = InheritanceSpec()
+        inh = Basics()
         print("Hii.. " + inh.var)
         self.driver = webdriver.Firefox()
         self.driver.maximize_window()
