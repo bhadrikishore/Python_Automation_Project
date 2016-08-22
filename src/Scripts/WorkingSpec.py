@@ -3,8 +3,8 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+from src.Pages.SamplePage import FacebookPage
 from src.Pyhton_Basics import InheritanceSpec
-from src.Scripts.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 class BaseSpec(unittest.TestCase):

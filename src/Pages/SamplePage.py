@@ -11,6 +11,6 @@ class FacebookPage(object):
         print('In Login')
         FBModule.driver.maximize_window()
         FBModule.driver.get("http://www.facebook.com")
-        #uname_field = WebDriverWwait(driver,10).until
+        FBModule.getUsernameField().send_keys("abc@gmail.com")
 
 

@@ -1,6 +1,6 @@
 import unittest
-from selenium import webdriver
-from src.Scripts.SamplePage import FacebookPage
+
+from src.Pages.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 class BaseSpec(unittest.TestCase):
@@ -13,10 +13,8 @@ class BaseSpec(unittest.TestCase):
         print('In Setup Method')
 
     def test_login(self):
-        self.driver = webdriver.Firefox()
-        self.driver.maximize_window()
         print("Hii")
-        #FBPage.login()
+        FBPage.login()
 
     def tearDown(self):
         print('In TearDown Method')
@@ -26,5 +24,5 @@ class BaseSpec(unittest.TestCase):
         print('In TearDown Class')
 
 if __name__ == "_main_":
-    unittest.main
+    unittest.main()
 
