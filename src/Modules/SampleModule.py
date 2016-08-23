@@ -5,7 +5,7 @@ from src.Scripts.BaseSpec import BaseClass
 base = BaseClass()
 class FacebookModule(BaseClass):
 
-    driver = base.browserLaunch()
+    driver = base.getDriver()
 
     def _init_(self):
         print('This is Sample Module Class')

@@ -1,13 +1,19 @@
 import unittest
-
+from selenium import webdriver
 from src.Pages.SamplePage import FacebookPage
+from src.Scripts.BaseSpec import BaseClass
 
 FBPage = FacebookPage()
-class BaseSpec(unittest.TestCase):
+base = BaseClass()
+class TestSpec(unittest.TestCase):
+
+    driver = base.getDriver()
 
     @classmethod
-    def setUpClass(cls):
+    def setUpClass(self):
         print('In Setup Class')
+        self.driver.maximize_window()
+        self.driver.get("http://www.facebook.com")
 
     def setUp(self):
         print('In Setup Method')
@@ -23,6 +29,6 @@ class BaseSpec(unittest.TestCase):
     def tearDownClass(cls):
         print('In TearDown Class')
 
-if __name__ == "_main_":
-    unittest.main()
+suite = unittest.TestLoader().loadTestsFromTestCase(TestSpec)
+unittest.TextTestRunner(verbosity=2).run(suite)
 
