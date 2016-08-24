@@ -1,15 +1,15 @@
-from src.Modules.SampleModule import FacebookModule
+import src.Modules.SampleModule as sm
 from src.Scripts.BaseSpec import BaseClass
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import configparser
+import properties
 
 
-FBModule = FacebookModule()
 base = BaseClass()
 config = configparser.ConfigParser()
-config.read('C:\Properties\properties.INI')
+config.read('C:\Bhadri\Automation_Projects\Python_Automation_Project\properties.INI')
 class FacebookPage(object):
 
 
@@ -20,9 +20,10 @@ class FacebookPage(object):
 
     def login(self):
         print('In Login')
-        FBModule.getUsernameField().send_keys(config.get('LoginCredentials','username'))
-        FBModule.getpassField().send_keys(config.get('LoginCredentials','password'))
-        base.click()
+        base.type(By.ID, sm.userNameField, properties.userName)
+        base.type(By.ID, sm.passwordField, properties.password)
+        base.click(By.ID,sm.loginButton)
+
 
 
 

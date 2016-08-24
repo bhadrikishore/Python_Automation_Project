@@ -12,9 +12,12 @@ class BaseClass(object):
     def getDriver(self):
         return self.driver
 
-    def click(self,elementpath):
-
-        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, elementpath)))
+    def click(self,locatorType,elementPath):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((locatorType, elementPath)))
         element.click()
+
+    def type(self,locatorType,elementPath,value):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((locatorType, elementPath)))
+        element.send_keys(value)
 
 
