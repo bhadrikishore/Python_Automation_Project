@@ -1,7 +1,9 @@
-import unittest
-from selenium import webdriver
+import unittest, time
+import HTMLTestRunner
+
 from src.Pages.SamplePage import FacebookPage
 from src.Scripts.BaseSpec import BaseClass
+
 
 FBPage = FacebookPage()
 base = BaseClass()
@@ -29,6 +31,21 @@ class TestSpec(unittest.TestCase):
     def tearDownClass(cls):
         print('In TearDown Class')
 
-suite = unittest.TestLoader().loadTestsFromTestCase(TestSpec)
-unittest.TextTestRunner(verbosity=2).run(suite)
+if __name__ == '__main__':
+    unittest.main()
+
+    # suite = unittest.TestSuite()
+    # suite.addTest(unittest.makeSuite(TestSpec))
+    # dateTimeStamp = time.strftime('%Y%m%d_%H_%M_%S')
+    # buf = "TestReport" + "_" + dateTimeStamp + ".html", 'wb'
+    # runner = HTMLTestRunner.HTMLTrepoestRunner(
+    #         stream=buf,
+    #         title='Test the Report',
+    #         description='Result of tests'
+    #         )
+    # runner.run(suite)
+# suite = unittest.TestLoader().loadTestsFromTestCase(TestSpec)
+# unittest.TextTestRunner(verbosity=2).run(suite)
+
+
 
