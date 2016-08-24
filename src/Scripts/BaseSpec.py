@@ -14,7 +14,6 @@ class BaseClass(object):
 
     def click(self,elementpath):
 
-
         element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, elementpath)))
         element.click()
 

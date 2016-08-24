@@ -17,13 +17,15 @@ class FacebookModule(BaseClass):
     def getUsernameField(self):
         return self.driver.find_element(By.ID, "email")
 
-
     def getpassField(self):
          return self.driver.find_element(By.ID, "pass")
 
+    def loginButtonField(self):
+         return self.driver.find_element(By.ID, "u_0_l").click()
 
 
 
-    #usernameField = driver.find_element(By.ID,"email")
+
+             #usernameField = driver.find_element(By.ID,"email")
     #passwordField = driver.find_element(By.ID,"pass")
     #loginButton = driver.find_element(By.ID,"u_0_l")

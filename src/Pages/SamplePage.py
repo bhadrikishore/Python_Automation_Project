@@ -22,7 +22,7 @@ class FacebookPage(object):
         print('In Login')
         FBModule.getUsernameField().send_keys(config.get('LoginCredentials','username'))
         FBModule.getpassField().send_keys(config.get('LoginCredentials','password'))
-        base.click(config.get('ObjectLocators','LoginButton'))
+        base.click()
 
 
 

@@ -1,5 +1,4 @@
 import unittest, time
-import HTMLTestRunner
 
 from src.Pages.SamplePage import FacebookPage
 from src.Scripts.BaseSpec import BaseClass
