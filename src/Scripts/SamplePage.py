@@ -1,7 +1,8 @@
-import src.Modules.SampleModule as sm
-from src.Scripts.BaseSpec import BaseClass
 from selenium.webdriver.common.by import By
+
 import properties
+import SampleModule as sm
+from BaseSpec import BaseClass
 
 base = BaseClass()
 class FacebookPage(object):

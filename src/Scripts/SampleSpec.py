@@ -1,7 +1,9 @@
 import unittest
-from src.Pages.SamplePage import FacebookPage
-from src.Scripts.BaseSpec import BaseClass
+
+import HTMLTestRunner
 import properties
+from BaseSpec import BaseClass
+from SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 base = BaseClass()
@@ -33,7 +35,7 @@ class TestSpec(unittest.TestCase):
         print('In TearDown Class')
 
 if __name__ == '__main__':
-    unittest.main()
+    HTMLTestRunner.main()
 
 
 
