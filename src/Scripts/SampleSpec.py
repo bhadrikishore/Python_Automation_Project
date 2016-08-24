@@ -1,8 +1,7 @@
-import unittest, time
-
+import unittest
 from src.Pages.SamplePage import FacebookPage
 from src.Scripts.BaseSpec import BaseClass
-
+import properties
 
 FBPage = FacebookPage()
 base = BaseClass()
@@ -14,7 +13,7 @@ class TestSpec(unittest.TestCase):
     def setUpClass(self):
         print('In Setup Class')
         self.driver.maximize_window()
-        self.driver.get("http://www.facebook.com")
+        self.driver.get(properties.websiteURL)
 
     def setUp(self):
         print('In Setup Method')
@@ -22,29 +21,20 @@ class TestSpec(unittest.TestCase):
     def test_login(self):
         print("Hii")
         FBPage.login()
+        self.assertTrue("Log in to Facebook | Facebook", self.driver.title)
+        print("Everything is completed")
 
     def tearDown(self):
         print('In TearDown Method')
+        self.driver.quit()
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(self):
         print('In TearDown Class')
 
 if __name__ == '__main__':
     unittest.main()
 
-    # suite = unittest.TestSuite()
-    # suite.addTest(unittest.makeSuite(TestSpec))
-    # dateTimeStamp = time.strftime('%Y%m%d_%H_%M_%S')
-    # buf = "TestReport" + "_" + dateTimeStamp + ".html", 'wb'
-    # runner = HTMLTestRunner.HTMLTrepoestRunner(
-    #         stream=buf,
-    #         title='Test the Report',
-    #         description='Result of tests'
-    #         )
-    # runner.run(suite)
-# suite = unittest.TestLoader().loadTestsFromTestCase(TestSpec)
-# unittest.TextTestRunner(verbosity=2).run(suite)
 
 
 
