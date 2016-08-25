@@ -16,13 +16,13 @@ class BaseClass(object):
 
     def type(self,locatorType,elementPath,value):
         if locatorType == By.ID:
-            element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, elementPath)))
+            element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.ID, elementPath)))
             element.send_keys(value)
         elif locatorType == By.Xpath:
-            element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, elementPath)))
+            element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, elementPath)))
             element.send_keys(value)
         elif locatorType == By.css:
-            element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, elementPath)))
+            element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, elementPath)))
             element.send_keys(value)
         else:
             print ("Please provide valid locator type")

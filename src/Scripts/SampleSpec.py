@@ -1,9 +1,9 @@
 import unittest
 
 import HTMLTestRunner
-import properties
+import properties as prop
 from BaseSpec import BaseClass
-from SamplePage import FacebookPage
+from src.Pages.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 base = BaseClass()
@@ -15,7 +15,8 @@ class TestSpec(unittest.TestCase):
     def setUpClass(self):
         print('In Setup Class')
         self.driver.maximize_window()
-        self.driver.get(properties.websiteURL)
+        print (prop.websiteURL)
+        self.driver.get(prop.websiteURL)
 
     def setUp(self):
         print('In Setup Method')
@@ -28,14 +29,14 @@ class TestSpec(unittest.TestCase):
 
     def tearDown(self):
         print('In TearDown Method')
-        self.driver.quit()
+        #self.driver.quit()
 
     @classmethod
     def tearDownClass(self):
         print('In TearDown Class')
 
 if __name__ == '__main__':
-    HTMLTestRunner.main()
+    unittest.main()
 
 
 

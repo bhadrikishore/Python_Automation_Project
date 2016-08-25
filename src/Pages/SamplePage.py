@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
-import properties
-import SampleModule as sm
-from BaseSpec import BaseClass
+import properties as prop
+from src.Scripts.BaseSpec import BaseClass
+from src.Modules import SampleModule as sm
 
 base = BaseClass()
 class FacebookPage(object):
@@ -14,16 +14,16 @@ class FacebookPage(object):
 
     def login(self):
         print('In Login')
-        base.type(By.ID, sm.userNameField, properties.userName)
+        base.type(By.ID, sm.userNameField, prop.userName)
         print ("After entering text into Username Field")
-        base.type(By.ID, sm.passwordField, properties.password)
+        base.type(By.ID, sm.passwordField, prop.password)
         base.click(By.ID,sm.loginButton)
 
     def loginFailure(self):
         print('In Login')
-        base.type(By.ID, sm.userNameField, properties.userName)
+        base.type(By.ID, sm.userNameField, prop.userName)
         print ("After entering text into Username Field")
-        base.type(By.ID, sm.passwordField, properties.password)
+        base.type(By.ID, sm.passwordField,prop.password)
         base.click(By.ID,sm.loginButton)
 
 
