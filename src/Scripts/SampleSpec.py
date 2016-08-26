@@ -1,8 +1,8 @@
-import unittest
-import pytest
-import Python_Automation_Project.properties as prop
-from .Pages.BasePage import BasePage
-from .Pages.SamplePage import FacebookPage
+import unittest,HTMLTestRunner
+
+import Pages.properties as prop
+from Pages.BasePage import BasePage
+from Pages.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 base = BasePage()
@@ -35,7 +35,7 @@ class TestSpec(unittest.TestCase):
         print('In TearDown Class')
 
 if __name__ == '__main__':
-    unittest.main()
+    HTMLTestRunner.main()
 
 
 

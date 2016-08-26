@@ -1,10 +1,13 @@
 from selenium.webdriver.common.by import By
 
-import Python_Automation_Project.properties as prop
+import properties as prop
 from BasePage import BasePage
-from Python_Automation_Project.src.Modules import SampleModule as sm
-
 base = BasePage()
+
+userNameField = "email"
+passwordField = "pass"
+loginButton = "u_0_l"
+
 class FacebookPage(object):
 
     driver = base.getDriver()
@@ -14,16 +17,16 @@ class FacebookPage(object):
 
     def login(self):
         print('In Login')
-        base.type(By.ID, sm.userNameField, prop.userName)
+        base.type(By.ID, userNameField, prop.userName)
         print ("After entering text into Username Field")
-        base.type(By.ID, sm.passwordField, prop.password)
-        base.click(By.ID,sm.loginButton)
+        base.type(By.ID, passwordField, prop.password)
+        base.click(By.ID, loginButton)
 
     def loginFailure(self):
         print('In Login')
-        base.type(By.ID, sm.userNameField, prop.userName)
+        base.type(By.ID, userNameField, prop.userName)
         print ("After entering text into Username Field")
-        base.type(By.ID, sm.passwordField,prop.password)
-        base.click(By.ID,sm.loginButton)
+        base.type(By.ID, passwordField,prop.password)
+        base.click(By.ID, loginButton)
 
 
