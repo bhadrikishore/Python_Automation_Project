@@ -1,9 +1,8 @@
 import unittest
-
-import HTMLTestRunner
+import pytest
 import properties as prop
 from BaseSpec import BaseClass
-from src.Pages.SamplePage import FacebookPage
+from SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 base = BaseClass()

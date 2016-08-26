@@ -1,4 +1,7 @@
 from selenium import webdriver
+import sys,properties as prop
+
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC

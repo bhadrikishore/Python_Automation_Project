@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 
 import properties as prop
-from src.Scripts import SampleModule as sm
-from src.Scripts.BaseSpec import BaseClass
+from BaseSpec import BaseClass
+import SampleModule as sm
 
 base = BaseClass()
 class FacebookPage(object):
@@ -25,10 +25,5 @@ class FacebookPage(object):
         print ("After entering text into Username Field")
         base.type(By.ID, sm.passwordField,prop.password)
         base.click(By.ID,sm.loginButton)
-
-
-
-
-
 
 
