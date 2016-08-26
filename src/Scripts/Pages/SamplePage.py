@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
-import properties as prop
-from BaseSpec import BaseClass
-import SampleModule as sm
+import Python_Automation_Project.properties as prop
+from BasePage import BasePage
+from Python_Automation_Project.src.Modules import SampleModule as sm
 
-base = BaseClass()
+base = BasePage()
 class FacebookPage(object):
 
     driver = base.getDriver()

@@ -1,11 +1,11 @@
 import unittest
 import pytest
-import properties as prop
-from BaseSpec import BaseClass
-from SamplePage import FacebookPage
+import Python_Automation_Project.properties as prop
+from .Pages.BasePage import BasePage
+from .Pages.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
-base = BaseClass()
+base = BasePage()
 class TestSpec(unittest.TestCase):
 
     driver = base.getDriver()
