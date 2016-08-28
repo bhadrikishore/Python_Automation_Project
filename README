@@ -1,0 +1,4 @@
+1. Execute command after navigating to the following directory
+        cd src/Scripts
+
+2. python SampleSpec.py > ./../../reports.html

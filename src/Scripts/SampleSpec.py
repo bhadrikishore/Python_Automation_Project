@@ -3,6 +3,7 @@ from selenium import webdriver
 import Pages.properties as prop
 from Pages.Base import BasePage
 from Pages.SamplePage import FacebookPage
+import Pages.properties
 
 FBPage = FacebookPage()
 base = BasePage()
@@ -10,7 +11,12 @@ class TestSpec(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver=webdriver.Firefox()
+
+        if(prop.browser=="firefox"):
+            self.driver=webdriver.Firefox()
+        elif(prop.browser=="chrome"):
+            self.driver=webdriver.Chrome("/usr/local/bin/chromedriver")
+
         base.setDriver(self.driver)
         print('In Setup Class')
         self.driver.maximize_window()
@@ -28,7 +34,7 @@ class TestSpec(unittest.TestCase):
 
     def tearDown(self):
         print('In TearDown Method')
-        #self.driver.quit()
+        self.driver.quit()
 
     @classmethod
     def tearDownClass(self):
