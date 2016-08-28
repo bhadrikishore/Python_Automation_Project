@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 import properties as prop
-from BasePage import BasePage
+from Base import BasePage
 base = BasePage()
 
 userNameField = "email"
@@ -9,8 +9,6 @@ passwordField = "pass"
 loginButton = "u_0_l"
 
 class FacebookPage(object):
-
-    driver = base.getDriver()
 
     def _init_(self):
         print("Reusable Functions")

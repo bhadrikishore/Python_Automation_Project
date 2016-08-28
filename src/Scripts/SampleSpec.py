@@ -1,17 +1,17 @@
 import unittest,HTMLTestRunner
-
+from selenium import webdriver
 import Pages.properties as prop
-from Pages.BasePage import BasePage
+from Pages.Base import BasePage
 from Pages.SamplePage import FacebookPage
 
 FBPage = FacebookPage()
 base = BasePage()
 class TestSpec(unittest.TestCase):
 
-    driver = base.getDriver()
-
     @classmethod
     def setUpClass(self):
+        self.driver=webdriver.Firefox()
+        base.setDriver(self.driver)
         print('In Setup Class')
         self.driver.maximize_window()
         print (prop.websiteURL)
