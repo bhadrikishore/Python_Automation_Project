@@ -12,7 +12,6 @@ def setUp(self):
                                                 "browserName": "firefox", \
                                                 "version": "35", \
                                                 })
-
         self.driver.implicitly_wait(30)
         self.base_url = "http://www.google.com"
         self.verificationErrors = []
