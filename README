@@ -2,3 +2,14 @@
         cd src/Scripts
 
 2. python SampleSpec.py > ./../../reports.html
+
+Different ways of executing the files under package
+------------------------------------------------------
+1. C:\Bhadri\Automation_Projects\Python_Automation_Project\src\Scripts> pytest --driver=Firefox --html=report.html --self-contained-html
+Executes all scripts available under Scripts directory.
+
+2.	C:\Bhadri\Automation_Projects\Python_Automation_Project\src\Scripts>pytest -k "test" --driver=Firefox --html=report.html --self-contained-html
+Executes all scripts with name “test” under Scripts directory.
+
+3.	C:\Bhadri\Automation_Projects\Python_Automation_Project>pytest src\Scripts\test_faceBook_login.py --driver=Firefox
+Executes only specified script.
